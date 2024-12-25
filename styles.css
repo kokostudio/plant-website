@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* เพิ่ม z-index */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c5f2d;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-links li a:hover {
+    color: #2c5f2d;
+    background-color: #e8f5e9;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://img.freepik.com/free-photo/indoor-plants-home-garden_53876-133116.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.hero .sub-heading {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    opacity: 0.9;
+}
+
+.products {
+    padding: 5rem 5%;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3, .product-card p {
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-card .description {
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    color: #2c5f2d;
+    font-weight: bold;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-column h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+}
+
+.attribution {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.attribution a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: relative; /* เพิ่ม position */
+    z-index: 1002; /* เพิ่ม z-index ให้อยู่บน mobile menu */
+}
+
+.mobile-menu-checkbox {
+    display: none;
+}
+
+.mobile-menu-checkbox:checked ~ .mobile-menu {
+    display: block;
+}
+
+.mobile-menu-checkbox:checked ~ .mobile-menu-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 6px);
+}
+
+.mobile-menu-checkbox:checked ~ .mobile-menu-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-checkbox:checked ~ .mobile-menu-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -6px);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.98);
+    padding-top: 80px;
+    z-index: 1001; /* ปรับ z-index ให้อยู่ระหว่าง header และ button */
+}
+
+/* แก้ไขการแสดงผลเมนูเมื่อกดปุ่ม */
+.mobile-menu-checkbox:checked ~ .mobile-menu,
+header .mobile-menu-checkbox:checked ~ .mobile-menu {
+    display: block;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 2rem;
+}
+
+.mobile-menu ul li {
+    margin: 2rem 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-checkbox:checked ~ .mobile-menu ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu-checkbox:checked ~ .mobile-menu ul li:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu-checkbox:checked ~ .mobile-menu ul li:nth-child(2) { transition-delay: 0.2s; }
+.mobile-menu-checkbox:checked ~ .mobile-menu ul li:nth-child(3) { transition-delay: 0.3s; }
+.mobile-menu-checkbox:checked ~ .mobile-menu ul li:nth-child(4) { transition-delay: 0.4s; }
+
+.mobile-menu ul li a {
+    color: #2c5f2d;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.mobile-menu ul li a:hover {
+    background-color: #e8f5e9;
+}
+
+/* ลบ underline effect เดิมออก */
+.mobile-menu ul li a::after {
+    display: none;
+}
+
+.mobile-menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #2c5f2d;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #2c5f2d;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-checkbox:checked ~ .mobile-menu-btn span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: #333; /* เปลี่ยนสีเมื่อเมนูเปิด */
+    }
+
+    .mobile-menu-checkbox:checked ~ .mobile-menu-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-checkbox:checked ~ .mobile-menu-btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+        background-color: #333; /* เปลี่ยนสีเมื่อเมนูเปิด */
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
