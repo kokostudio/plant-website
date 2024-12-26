@@ -1,0 +1,212 @@
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logo img {
+    height: 32px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .logo-icon {
+    font-size: 1.8rem !important;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  position: relative;
+  /* เพิ่ม position */
+  z-index: 1002;
+  /* เพิ่ม z-index ให้อยู่บน mobile menu */
+}
+
+.mobile-menu-checkbox {
+  display: none;
+}
+
+.mobile-menu-checkbox:checked~.mobile-menu {
+  display: block;
+}
+
+.mobile-menu-checkbox:checked~.mobile-menu-btn span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 6px);
+}
+
+.mobile-menu-checkbox:checked~.mobile-menu-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-checkbox:checked~.mobile-menu-btn span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -6px);
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.98);
+  padding-top: 80px;
+  z-index: 1001;
+  /* ปรับ z-index ให้อยู่ระหว่าง header และ button */
+  overflow-y: auto;
+}
+
+/* แก้ไขการแสดงผลเมนูเมื่อกดปุ่ม */
+.mobile-menu-checkbox:checked~.mobile-menu,
+header .mobile-menu-checkbox:checked~.mobile-menu {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 2rem;
+}
+
+.mobile-menu ul li {
+  margin: 1.5rem 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-checkbox:checked~.mobile-menu ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu-checkbox:checked~.mobile-menu ul li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.mobile-menu-checkbox:checked~.mobile-menu ul li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.mobile-menu-checkbox:checked~.mobile-menu ul li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.mobile-menu-checkbox:checked~.mobile-menu ul li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.mobile-menu ul li a {
+  color: #2c5f2d;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.mobile-menu ul li a:hover,
+.mobile-menu ul li a.active {
+  background-color: #e8f5e9;
+  transform: translateX(10px);
+}
+
+.mobile-menu ul li a .material-symbols-outlined {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #2c5f2d;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-checkbox:checked~.mobile-menu-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: #333;
+    /* เปลี่ยนสีเมื่อเมนูเปิด */
+  }
+
+  .mobile-menu-checkbox:checked~.mobile-menu-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-checkbox:checked~.mobile-menu-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+    background-color: #333;
+    /* เปลี่ยนสีเมื่อเมนูเปิด */
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  html {
+    scroll-padding-top: 60px;
+  }
+
+  .about-section,
+  .contact-section,
+  .products {
+    scroll-margin-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cookie-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .cookie-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}

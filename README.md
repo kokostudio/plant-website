@@ -1,28 +1,29 @@
-# Plant Website
+# เว็บไซต์ร้านต้นไม้
 
-This project is a simple HTML website focused on nature, plants, and the environment. It features a light pastel green color scheme and includes various sections such as a menu, highlights, a slider, and a footer.
+โครงการนี้เป็นเว็บไซต์ HTML ที่เน้นธรรมชาติ ต้นไม้ และสิ่งแวดล้อม มีการใช้โทนสีเขียวอ่อนและประกอบด้วยส่วนต่างๆ เช่น เมนู, ไฮไลท์, สไลเดอร์ และส่วนท้าย
 
-## Project Structure
+## โครงสร้างโครงการ
 
 ```
 plant-website
 ├── css
-│   ├── styles.css        # Main styles for the website
-│   ├── slider.css        # Styles for the slider component
-│   ├── navbar.css        # Styles for the navigation bar
-│   └── footer.css        # Styles for the footer
-├── index.html            # Homepage layout
-├── about.html            # Information about nature and plants
-├── plants.html           # List of various plants
-└── contact.html          # Contact form for users
+│   ├── main.css          # สไตล์หลักของเว็บไซต์
+│   ├── layout.css        # สไตล์สำหรับการจัดวาง
+│   ├── components.css    # สไตล์สำหรับคอมโพเนนต์ต่างๆ
+│   ├── theme.css         # สไตล์สำหรับธีมและสี
+│   └── responsive.css    # สไตล์สำหรับการตอบสนองต่อขนาดหน้าจอ
+├── index.html            # โครงร่างหน้าแรก
+├── about.html            # ข้อมูลเกี่ยวกับธรรมชาติและต้นไม้
+├── plants.html           # รายการต้นไม้ต่างๆ
+└── contact.html          # แบบฟอร์มติดต่อสำหรับผู้ใช้
 ```
 
-## Setup Instructions
+## วิธีการติดตั้ง
 
-1. Clone the repository to your local machine.
-2. Open the `index.html` file in your web browser to view the website.
-3. Modify the CSS and JavaScript files as needed to customize the website's appearance and functionality.
+1. โคลน repository ไปยังเครื่องของคุณ
+2. เปิดไฟล์ `index.html` ในเว็บเบราว์เซอร์เพื่อดูเว็บไซต์
+3. แก้ไขไฟล์ CSS และ JavaScript ตามต้องการเพื่อปรับแต่งรูปลักษณ์และฟังก์ชันการทำงานของเว็บไซต์
 
-## Purpose
+## วัตถุประสงค์
 
-The purpose of this website is to educate users about nature and plants, providing them with useful information and resources. It aims to promote awareness and appreciation for the environment.
+วัตถุประสงค์ของเว็บไซต์นี้คือการให้ความรู้แก่ผู้ใช้เกี่ยวกับธรรมชาติและต้นไม้ โดยให้ข้อมูลและทรัพยากรที่เป็นประโยชน์ เพื่อส่งเสริมการตระหนักรู้และการชื่นชมสิ่งแวดล้อม
