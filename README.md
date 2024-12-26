@@ -11,9 +11,6 @@ plant-website
 │   ├── slider.css        # Styles for the slider component
 │   ├── navbar.css        # Styles for the navigation bar
 │   └── footer.css        # Styles for the footer
-├── js
-│   ├── main.js           # Main JavaScript functionality
-│   └── slider.js         # JavaScript for the slider
 ├── index.html            # Homepage layout
 ├── about.html            # Information about nature and plants
 ├── plants.html           # List of various plants
