@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Prompt', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Import other CSS files */
+@import 'layout.css';
+@import 'components.css';
+@import 'theme.css';
+@import 'responsive.css';
